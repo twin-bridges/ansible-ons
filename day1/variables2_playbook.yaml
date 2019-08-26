@@ -1,0 +1,20 @@
+---
+- name: variables_ex2_task1
+  hosts: nxos1
+  tasks:
+    - debug:
+        var: some_variable
+    - debug:
+        var: some_list
+    - debug:
+        var: some_dict
+
+- name: variables_ex2_task1
+  hosts: nxos
+  tasks:
+    - debug:
+        var: some_variable
+    - debug:
+        var: some_list
+    - debug:
+        var: some_dict

@@ -1,0 +1,5 @@
+---
+- name: inventory_ex2
+  hosts: all
+  tasks:
+    - ping:

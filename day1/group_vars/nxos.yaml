@@ -1,0 +1,3 @@
+---
+platform: nxos
+some_variable: this is NOT a variable

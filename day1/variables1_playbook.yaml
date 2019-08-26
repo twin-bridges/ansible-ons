@@ -1,0 +1,12 @@
+---
+- name: variables_ex1_task1
+  hosts: arista
+  tasks:
+    - debug:
+        var: ansible_host
+
+- name: variables_ex1_task2
+  hosts: all
+  tasks:
+    - debug:
+        var: platform

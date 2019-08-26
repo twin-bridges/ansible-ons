@@ -1,0 +1,17 @@
+---
+- name: variables_ex2_task1
+  hosts: nxos1
+  tasks:
+    - set_fact:
+        my_new_variable: "{{ some_list[0] + ' ' + some_list[1] }}"
+    - debug:
+        var: my_new_variable
+    - set_fact:
+        my_new_variable: "{{ some_list[0] + ' ' + some_list[1] }}"
+    - debug:
+        var: my_new_variable
+
+    - set_fact:
+        domain_name: "{{ ansible_host.split('.')[1:] | join('.') }}"
+    - debug:
+        var: domain_name
