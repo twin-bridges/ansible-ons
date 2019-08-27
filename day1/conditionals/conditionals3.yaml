@@ -1,0 +1,17 @@
+---
+- name: conditionals ex3
+  hosts: arista
+  gather_facts: False
+  tasks:
+    - eos_facts:
+      register: device_facts
+    - debug:
+        msg: acceptible major version number
+      when: ansible_net_version.startswith("4")
+    - debug:
+        msg: management1 interface is down
+      when: ansible_net_interfaces["Management1"]["lineprotocol"] == "down"
+    - debug:
+        msg: "interface {{ item.key }} is up!"
+      when: item.value["lineprotocol"] == "up"
+      loop: "{{ ansible_net_interfaces | dict2items }}"

@@ -1,0 +1,17 @@
+---
+- name: gather ios facts
+  hosts: cisco
+  gather_facts: False
+  tasks:
+    - ios_facts:
+      register: device_facts
+    - debug:
+        var: device_facts
+- name: gather eos facts
+  hosts: arista
+  gather_facts: False
+  tasks:
+    - eos_facts:
+      register: device_facts
+    - debug:
+        var: device_facts

@@ -1,0 +1,12 @@
+---
+- name: conditionals ex2
+  hosts: cisco
+  gather_facts: False
+  tasks:
+    - ios_facts:
+      register: device_facts
+    - debug:
+        var: device_facts["device_hostname"]
+    - debug:
+        var: device_facts["device_hostname"]
+      when: device_facts["device_hostname"] is defined

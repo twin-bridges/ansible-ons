@@ -9,4 +9,4 @@
   hosts: all
   tasks:
     - debug:
-        var: platform
+        var: ansible_network_os

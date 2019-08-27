@@ -1,0 +1,8 @@
+---
+- name: looping with "with" -- lists
+  hosts: localhost
+  gather_facts: False
+  tasks:
+    - debug:
+        msg: "Some IP address... {{ item }}"
+      with_items: "{{ ip_addresses }}"

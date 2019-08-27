@@ -2,16 +2,16 @@
 
 1. Create a simple INI-sytle Ansible inventory file with a single entry for the localhost. Ensure that this localhost is configured under a group called "local", and that the "ansible_connection" is set to local (this is so we don't need to worry about any authentication yet).
 
-Use the Ansible command line to execute the ping module against the group you created ("local"); ensure that you are "pointing" to the inventory file you just created with the "-i" flag (substitue "inventory" with the name of your inventory file below):
+Use the Ansible command line to execute the ping module against the group you created ("local"); ensure that you are "pointing" to the inventory file you just created with the "-i" flag (substitue "inventory_ex1" with the name of your inventory file below):
 
 ```
-ansible local -m ping -i ./inventory
+ansible local -m ping -i ./inventory_ex1
 ```
 
 Your results should look similar to the following:
 
 ```
-$ ansible local -m ping -i ./inventory
+$ ansible local -m ping -i ./inventory_ex1
 localhost | SUCCESS => {
     "changed": false,
     "ping": "pong"

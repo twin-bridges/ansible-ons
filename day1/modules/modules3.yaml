@@ -1,0 +1,11 @@
+---
+- name: gather nxos facts
+  hosts: nxos
+  gather_facts: False
+  tasks:
+    - nxos_facts:
+      register: device_facts
+    - debug:
+        var: device_facts["ansible_facts"]["ansible_net_neighbors"]
+    - debug:
+        var: device_facts["ansible_facts"]["ansible_net_neighbors"]["Ethernet1/1"][0].sysname

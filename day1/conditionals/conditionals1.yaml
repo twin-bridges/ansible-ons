@@ -1,0 +1,21 @@
+---
+- name: conditionals ex1
+  hosts: localhost
+  vars:
+    some_string: "racecar"
+  tasks:
+    - debug:
+        msg: "FALSE: Hello World"
+      when: False
+    - debug:
+        msg: "TRUE: Hello World"
+      when: True
+    - debug:
+        msg: "racecars are fast!"
+      when: some_string == "racecar"
+    - debug:
+        msg: "racecars are still pretty fast!"
+      when: "'car' in some_string"
+    - debug:
+        msg: "(most) trucks aren't racecars!"
+      when: "'truck' in some_string"

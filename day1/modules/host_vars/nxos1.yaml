@@ -1,0 +1,7 @@
+---
+some_variable: this is a variable
+some_list:
+  - list item 1
+  - list item 2
+some_dict:
+  thisisakey: thisisavalue

@@ -1,0 +1,11 @@
+---
+- name: gather nxos facts
+  hosts: nxos
+  gather_facts: False
+  tasks:
+    - nxos_facts:
+      register: device_facts
+    - debug:
+        var: device_facts["ansible_facts"]["vlan_list"]
+    - debug:
+        var: device_facts["ansible_facts"]["vlan_list"][0]

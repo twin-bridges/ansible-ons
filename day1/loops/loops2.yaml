@@ -1,0 +1,8 @@
+---
+- name: looping with "with" -- dicts
+  hosts: localhost
+  gather_facts: False
+  tasks:
+    - debug:
+        msg: "dictionary key: {{ item.key }}; dictionary value: {{ item.value }}"
+      with_dict: "{{ my_acl }}"

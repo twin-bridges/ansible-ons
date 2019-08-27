@@ -1,0 +1,11 @@
+---
+- name: looping with "loop"
+  hosts: localhost
+  gather_facts: False
+  tasks:
+    - debug:
+        msg: "Some IP address... {{ item }}"
+      loop: "{{ ip_addresses }}"
+    - debug:
+        msg: "dictionary key: {{ item.key }}; dictionary value: {{ item.value }}"
+      loop: "{{ my_acl | dict2items }}"

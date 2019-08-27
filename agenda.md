@@ -5,14 +5,16 @@
 ### Git Overview
 
 1. Lecture
-2. [Exercise 1](/day1/git_ex1.md)
-3. [Exercise 2](/day1/git_ex2.md)
+2. [Exercise 1](/day1/git/git_ex1.md)
+3. [Exercise 2](/day1/git/git_ex2.md)
 
 ### YAML
 
+super high level intro to lists/dicts
+
 1. Lecture
-2. [Exercise 1](/day1/yaml_ex1.md)
-3. [Exercise 2](/day1/yaml_ex2.md)
+2. [Exercise 1](/day1/yaml/yaml_ex1.md)
+3. [Exercise 2](/day1/yaml/yaml_ex2.md)
 
 ### Ansible Overview
 
@@ -22,42 +24,47 @@
 ### Ansible Inventory
 
 1. Lecture
-2. [Exercise 1](/day1/inventory_ex1.md)
-3. [Exercise 2](/day1/inventory_ex2.md)
+2. [Exercise 1](/day1/inventory/inventory_ex1.md)
+3. [Exercise 2](/day1/inventory/inventory_ex2.md)
 
 
 ### Variables
 
+need to get into talking about lists/dicts here a bit more
+
 1. Lecture
-2. [Exercise 1](/day1/variables_ex1.md)
-3. [Exercise 2](/day1/variables_ex2.md)
-4. [Exercise 3](/day1/variables_ex3.md)
+2. [Exercise 1](/day1/variables/variables_ex1.md)
+3. [Exercise 2](/day1/variables/variables_ex2.md)
+4. [Exercise 3](/day1/variables/variables_ex3.md)
 
 
 ### Ansible Modules
 
 steal from class2 ++ what is a module, show where to find module index, etc. maybe a quick discussion/highlight of copy, command/shell since those are v handy to know
+here we will start actually interacting w/ lists dicts a little more (w/out loops so far)
+
 1. Lecture
-2. [Exercise 1] -- just use file module cuz we can touch a file really simply
-3. [Exercise 2] -- `*_command`  module; basic show command
-4. [Exercise 3] -- `*_command`  module; basic show command again, to show that the ansible structure stays the same
+2. [Exercise 1](/day1/modules/modules_ex1.md)
+3. [Exercise 2](/day1/modules/modules_ex2.md)
+4. [Exercise 3](/day1/modules/modules_ex3.md)
 
 
 ### Loops
 steal from https://github.com/ktbyers/pynet-ons-jul17/tree/master/ansible/loops
 
 1. Lecture
-2. "legacy" looping (with_items/with_dict)
-3. loops - loop over list and dict
-4. probably something at least outlining how you can zip things / cartesian stuff
+2. [Exercise 1](/day1/loops/loops_ex1.md)
+3. [Exercise 2](/day1/loops/loops_ex2.md)
+4. [Exercise 3](/day1/loops/loops_ex3.md)
+5. maybe another at least outlining how you can zip things / cartesian stuff? maybe thats too much at this point?
 
 ### Conditionals
 steal from https://github.com/ktbyers/pynet-ons-jul17/tree/master/ansible/conditionals
 
 1. Lecture
-2. basic when eq/neq
-3. when "in"
-4. when var defined/not defined
+2. [Exercise 1](/day1/conditionals/conditionals_ex1.md)
+3. [Exercise 2](/day1/conditionals/conditionals_ex2.md)
+3. [Exercise 3](/day1/conditionals/conditionals_ex3.md)
 
 
 ## Day 2
