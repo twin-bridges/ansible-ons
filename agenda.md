@@ -83,32 +83,30 @@ exercises to get info from device ++ parse
 use command modules instead of just facts
 
 1. Lecture
-2. [Exercise 1](/day2/conditionals/gathering_info_ex1.md)
-3. [Exercise 2](/day2/conditionals/gathering_info_ex2.md)
+2. [Exercise 1](/day2/gathering_info/gathering_info_ex1.md)
+3. [Exercise 2](/day2/gathering_info/gathering_info_ex2.md)
 
 Optional:
 
-3. [Exercise 3](/day2/conditionals/gathering_info_ex3.md)
+3. [Exercise 3](/day2/gathering_info/gathering_info_ex3.md)
 
 ### Basic Configuration Changes
 steal from https://github.com/ktbyers/ansible_course/tree/master/class3/exercises
 
 1. Lecture
-2. [Exercise 1](/day2/conditionals/basic_configuration_ex1.md)
-3. [Exercise 2](/day2/conditionals/basic_configuration_ex2.md)
+2. [Exercise 1](/day2/basic_configuration/basic_configuration_ex1.md)
+3. [Exercise 2](/day2/basic_configuration/basic_configuration_ex2.md)
 
 Optional:
 
-4. [Exercise 3](/day2/conditionals/basic_configuration_ex3.md)
+4. [Exercise 3](/day2/basic_configuration/basic_configuration_ex3.md)
 
 ### Handlers
-steal from
-
 include at least something *not* network related (restart a service or even just run some other task to show that i could be whatever)
 
 1. Lecture
-2. handler in a script to just echo something
-3. handler for wr mem, then in ext file
+2. [Exercise 1](/day2/handlers/basic_configuration_ex1.md)
+2. [Exercise 2](/day2/handlers/basic_configuration_ex2.md)
 
 ### Tags
 

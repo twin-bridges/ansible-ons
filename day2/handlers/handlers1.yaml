@@ -1,0 +1,14 @@
+---
+- name: handlers ex1
+  hosts: localhost
+  gather_facts: False
+  tasks:
+    - debug:
+        msg: "hello, world"
+      changed_when: True
+      notify: say hi back
+
+  handlers:
+    - name: say hi back
+      debug:
+        msg: "oh, hello there!"

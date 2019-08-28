@@ -1,0 +1,20 @@
+---
+- name: handlers ex2
+  hosts: cisco
+  gather_facts: False
+  tasks:
+    - ios_config:
+        lines:
+          - description a neat loopback
+        parents: interface Loopback123
+      notify:
+        - alert me
+        - save config
+
+  handlers:
+    - name: alert me
+      debug:
+        msg: STUFF HAS CHANGED, DONT FREAK OUT!
+    - name: save config
+      ios_command:
+        commands: wr mem
