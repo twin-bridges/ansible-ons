@@ -1,0 +1,14 @@
+---
+- name: basic configuration ex1
+  hosts: arista
+  gather_facts: False
+  tasks:
+    - eos_config:
+        lines:
+          - name vlan-4000
+        parents: vlan 4000
+    - eos_vlan:
+        vlan_id: 4000
+        name: vlan-4000
+        state: present
+

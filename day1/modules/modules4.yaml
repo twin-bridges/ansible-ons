@@ -1,0 +1,17 @@
+---
+- name: gather pan facts
+  hosts: pan_firewalls
+  gather_facts: False
+  vars:
+    provider:
+      ip_address: "{{ ansible_host }}"
+      username: "{{ ansible_user }}"
+      password: "{{ ansible_password }}"
+  roles:
+    - role: PaloAltoNetworks.paloaltonetworks
+  tasks:
+    - panos_check:
+        provider: "{{ provider }}"
+      register: pan_state
+    - debug:
+        var: pan_state

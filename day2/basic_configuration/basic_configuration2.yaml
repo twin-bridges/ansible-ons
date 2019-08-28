@@ -1,0 +1,10 @@
+---
+- name: basic configuration ex2
+  hosts: nxos
+  gather_facts: False
+  tasks:
+    - nxos_l3_interface:
+        name: "{{ item.name }}"
+        ipv4: "{{ item.addr }}/{{ item.mask }}"
+      loop: "{{ ip_interfaces }}"
+      when: "item.type == 'v4'"

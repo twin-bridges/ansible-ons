@@ -1,0 +1,10 @@
+---
+ip_interfaces:
+  - name: Ethernet 1/32
+    type: v4
+    addr: 10.1.1.1
+    mask: 24
+  - name: Ethernet 1/32
+    type: v6
+    addr: 2001:db8:800:200c::1
+    mask: 64

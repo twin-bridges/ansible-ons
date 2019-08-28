@@ -1,0 +1,23 @@
+---
+- name: gathering info cisco devices
+  hosts: cisco
+  gather_facts: False
+  tasks:
+    - ios_command:
+        commands: show ip arp
+      register: arp_table
+- name: gathering info arista devices
+  hosts: arista
+  gather_facts: False
+  tasks:
+    - eos_command:
+        commands: show ip arp
+      register: arp_table
+- name: get interesting data from arp table
+  hosts: cisco, arista
+  gather_facts: False
+  tasks:
+    - debug:
+        msg: "{{ item }}"
+      when: item.startswith("10.220.88.1") or item.startswith("Internet  10.220.88.1 ")
+      loop: "{{ arp_table['stdout_lines'][0] }}"

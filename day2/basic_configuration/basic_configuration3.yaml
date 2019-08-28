@@ -1,0 +1,19 @@
+---
+- name: basic configuration ex2
+  hosts: pan_firewalls
+  gather_facts: False
+  vars:
+    provider:
+      ip_address: "{{ ansible_host }}"
+      username: "{{ ansible_user }}"
+      password: "{{ ansible_password }}"
+  roles:
+    - role: PaloAltoNetworks.paloaltonetworks
+  tasks:
+    - panos_address_object:
+        provider: "{{ provider }}"
+        name: "{{ item.name }}"
+        description: "{{ item.desc }}"
+        address_type: "{{ item.type }}"
+        value: "{{ item.addr }}"
+      loop: "{{ address_objects }}"

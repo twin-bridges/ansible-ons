@@ -1,0 +1,29 @@
+---
+- name: gathering info cisco devices
+  hosts: cisco
+  gather_facts: False
+  tasks:
+    - ios_facts:
+      register: device_facts
+- name: gathering info nxos devices
+  hosts: nxos
+  gather_facts: False
+  tasks:
+    - nxos_facts:
+      register: device_facts
+- name: get flash info for low mem hosts
+  hosts: cisco, nxos
+  gather_facts: False
+  tasks:
+    - ios_command:
+        commands: "dir flash:"
+      when: ansible_net_memfree_mb < 2000 and ansible_network_os == "ios"
+      register: flash_output
+    - nxos_command:
+        commands: "dir bootflash:"
+      when: ansible_net_memfree_mb < 2000 and ansible_network_os == "nxos"
+      register: flash_output
+    - debug:
+        var: flash_output
+      when: flash_output is defined
+

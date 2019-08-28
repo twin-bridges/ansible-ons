@@ -1,0 +1,28 @@
+---
+- name: conditionals ex4
+  hosts: pan_firewalls
+  gather_facts: False
+  vars:
+    provider:
+      ip_address: "{{ ansible_host }}"
+      username: "{{ ansible_user }}"
+      password: "{{ ansible_password }}"
+  roles:
+    - role: PaloAltoNetworks.paloaltonetworks
+  tasks:
+    - panos_api_key:
+        provider: "{{ provider }}"
+      register: output
+    - set_fact:
+        provider:
+          ip_address: "{{ ansible_host }}"
+          username: "{{ ansible_user }}"
+          api_key: "{{ output['api_key'] }}"
+      when: output["api_key"] != ""
+    - debug:
+        var: provider
+    - panos_api_key:
+        provider: "{{ provider }}"
+      register: output
+    - debug:
+        var: output

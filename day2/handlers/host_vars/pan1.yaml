@@ -1,0 +1,18 @@
+---
+address_objects:
+  - name: email_server
+    desc: the most important email server ever
+    type: ip-netmask
+    addr: 193.18.4.15
+  - name: web_tier
+    desc: i guess this serves cat videos
+    type: ip-range
+    addr: 172.31.0.10-172.31.0.200
+  - name: silly_users
+    desc: consumers of cat videos
+    type: ip-range
+    addr: 10.4.0.0-10.7.255.255
+  - name: not_sure
+    desc: literally no idea but seems important
+    type: fqdn
+    addr: veryimportant.server.com

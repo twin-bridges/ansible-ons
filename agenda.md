@@ -48,6 +48,10 @@ here we will start actually interacting w/ lists dicts a little more (w/out loop
 3. [Exercise 2](/day1/modules/modules_ex2.md)
 4. [Exercise 3](/day1/modules/modules_ex3.md)
 
+Optional:
+
+5. [Exercise 4](/day1/modules/modules_ex4.md)
+
 
 ### Loops
 steal from https://github.com/ktbyers/pynet-ons-jul17/tree/master/ansible/loops
@@ -66,27 +70,36 @@ steal from https://github.com/ktbyers/pynet-ons-jul17/tree/master/ansible/condit
 3. [Exercise 2](/day1/conditionals/conditionals_ex2.md)
 3. [Exercise 3](/day1/conditionals/conditionals_ex3.md)
 
+Optional:
+
+5. [Exercise 4](/day1/conditionals/conditionals_ex4.md)
 
 ## Day 2
 
 ### Gathering Information
 
-probably just a quick discussion about recapping lists/dicts and then a demo of "getting" data and parsing it from something
+a good "recap" lesson to review from day 1 - probably just a quick discussion about recapping lists/dicts and then a demo of "getting" data and parsing it from something
 exercises to get info from device ++ parse
-facts -- both ios_facts (or w/e) but also "normal" facts
+use command modules instead of just facts
 
 1. Lecture
-2. get facts from something and access / print (debug) some thing; add a conditonal to only do this if XYZ
-3.
+2. [Exercise 1](/day2/conditionals/gathering_info_ex1.md)
+3. [Exercise 2](/day2/conditionals/gathering_info_ex2.md)
+
+Optional:
+
+3. [Exercise 3](/day2/conditionals/gathering_info_ex3.md)
 
 ### Basic Configuration Changes
 steal from https://github.com/ktbyers/ansible_course/tree/master/class3/exercises
 
-using built in config modules
-
 1. Lecture
-2.
-3.
+2. [Exercise 1](/day2/conditionals/basic_configuration_ex1.md)
+3. [Exercise 2](/day2/conditionals/basic_configuration_ex2.md)
+
+Optional:
+
+4. [Exercise 3](/day2/conditionals/basic_configuration_ex3.md)
 
 ### Handlers
 steal from
@@ -94,11 +107,10 @@ steal from
 include at least something *not* network related (restart a service or even just run some other task to show that i could be whatever)
 
 1. Lecture
-2. save config handler
-3. something/anything else?
+2. handler in a script to just echo something
+3. handler for wr mem, then in ext file
 
 ### Tags
-steal from
 
 skip tags, always, never, list of tags, etc.
 
@@ -141,12 +153,19 @@ template configs (or literally whatever)
 
 ### Filters
 
+1. Lecture
+
 ### Roles
+
+1. Lecture
 
 ### Validating Changes
 
+1. Lecture
+
 ### Debugging
 
+1. Lecture
 
 ## Day 4
 
