@@ -110,10 +110,8 @@ include at least something *not* network related (restart a service or even just
 
 ### Tags
 
-skip tags, always, never, list of tags, etc.
-
 1. Lecture
-2. maybe just one tags lecture?
+2. [Exercise 1](/day2/tags/tags_ex1.md)
 
 ### Jinja2
 steal from
@@ -121,10 +119,14 @@ steal from
 template configs (or literally whatever)
 
 1. Lecture
-2. basics
-3. for loop
-4. conditionals
-5. inherits
+2. [Exercise 1](/day2/jinja2/templates_ex1.md)
+3. [Exercise 2](/day2/jinja2/templates_ex2.md)
+4. [Exercise 3](/day2/jinja2/templates_ex3.md)
+5. [Exercise 4](/day2/jinja2/templates_ex4.md)
+
+Optional
+
+template dags? something pan...?
 
 
 ## Day 3
