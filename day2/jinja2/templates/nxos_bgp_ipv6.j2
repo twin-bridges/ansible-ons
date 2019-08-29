@@ -1,0 +1,6 @@
+interface {{ bgpv6_interface }}
+  ipv6 address {{ bgpv6_address }}/{{ bgpv6_mask }}
+
+router bgp {{ local_bgp_asn }}
+  neighbor {{ bgp_peer1 }} remote-as {{ local_bgp_asn }}
+    address-family ipv6 unicas

@@ -1,0 +1,17 @@
+********** srx1.lasthop.io **********
+
+********** Routing Table
+inet.0: 3 destinations, 3 routes (3 active, 0 holddown, 0 hidden)
++ = Active Route, - = Last Active, * = Both
+
+A Destination        P Prf   Metric 1   Metric 2  Next hop         AS path
+* 0.0.0.0/0          S   5                       >10.220.88.1
+* 10.220.88.0/24     D   0                       >vlan.0       
+* 10.220.88.39/32    L   0                        Local
+
+********** Arp Table
+MAC Address       Address         Name                      Interface           Flags
+00:62:ec:29:70:fe 10.220.88.1     10.220.88.1               vlan.0              none
+00:1b:78:73:56:34 10.220.88.41    10.220.88.41              vlan.0              none
+ec:38:73:9e:2f:08 10.220.88.42    10.220.88.42              vlan.0              none
+Total entries: 3

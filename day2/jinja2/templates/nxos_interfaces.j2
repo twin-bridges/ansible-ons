@@ -1,0 +1,21 @@
+{% macro port_shutdown() -%}
+  shutdown
+  switchport
+  switchport access vlan 123
+{%- endmacro %}
+{% for interface in interface_configs %}
+interface {{ interface.interface }}
+{% if interface.state == "disable" %}
+  {{ port_shutdown() }}
+{% else %}
+{% if interface.mode == "l2" %}
+  switchport
+  switchport mode trunk
+{% elif interface.mode == "l3" %}
+  no switchport
+  ip address {{ interface.ip }}
+  no shutdown
+{% endif %}
+{% endif %}
+!
+{% endfor %}

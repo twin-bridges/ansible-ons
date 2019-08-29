@@ -1,0 +1,9 @@
+---
+- name: templates ex3
+  hosts: nxos
+  gather_facts: False
+  tasks:
+    - template:
+        src: templates/nxos_interfaces.j2
+        dest: configurations/{{ inventory_hostname }}_interfaces
+      tags: render_configs

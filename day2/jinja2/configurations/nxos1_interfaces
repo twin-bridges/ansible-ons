@@ -1,0 +1,14 @@
+interface Ethernet1/41
+  switchport
+  switchport mode trunk
+!
+interface Ethernet1/42
+  no switchport
+  ip address 10.255.255.255/32
+  no shutdown
+!
+interface Ethernet1/43
+  shutdown
+  switchport
+  switchport access vlan 123
+!

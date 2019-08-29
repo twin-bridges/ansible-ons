@@ -1,0 +1,30 @@
+---
+ip_interfaces:
+  - name: Ethernet 1/32
+    type: v4
+    addr: 10.1.1.1
+    mask: 24
+  - name: Ethernet 1/32
+    type: v6
+    addr: 2001:db8:800:200c::1
+    mask: 64
+
+bgpv6_interface: Ethernet1/4
+bgpv6_address: 2001:db8:800:200c::1
+bgpv6_mask: 64
+
+local_bgp_asn: 22
+bgp_peer1: 2001:db8:800:200c::2
+
+
+interface_configs:
+  - interface: Ethernet1/41
+    mode: l2
+    state: enable
+  - interface: Ethernet1/42
+    mode: l3
+    ip: 10.255.255.255/32
+    state: enable
+  - interface: Ethernet1/43
+    mode: l2
+    state: disable

@@ -1,0 +1,6 @@
+interface Ethernet1/4
+  ipv6 address 2001:db8:800:200c::1/64
+
+router bgp 22
+  neighbor 2001:db8:800:200c::2 remote-as 22
+    address-family ipv6 unicas

@@ -1,0 +1,24 @@
+---
+- name: templates ex1
+  hosts: cisco, nxos, arista
+  gather_facts: False
+  tasks:
+    - template:
+        src: templates/global_config.j2
+        dest: configurations/{{ inventory_hostname }}_global
+      tags:
+        - cisco
+        - nxos
+        - eos
+    - ios_config:
+        src: configurations/{{ inventory_hostname }}_global
+      when: ansible_network_os == "ios"
+      tags: cisco
+    - nxos_config:
+        src: configurations/{{ inventory_hostname }}_global
+      when: ansible_network_os == "nxos"
+      tags: nxos
+    - eos_config:
+        src: configurations/{{ inventory_hostname }}_global
+      when: ansible_network_os == "eos"
+      tags: eos

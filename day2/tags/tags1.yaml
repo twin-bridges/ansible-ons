@@ -1,0 +1,47 @@
+---
+- name: tags ex1
+  hosts: localhost
+  gather_facts: False
+  tasks:
+    - debug:
+        msg: "my tag is red"
+      tags:
+        - red
+    - debug:
+        msg: "my tag is blue"
+      changed_when: True
+      notify:
+        - red to blue
+        - never handle things
+      tags:
+        - blue
+    - debug:
+        msg: "my tag is red and blue"
+      tags:
+        - red
+        - blue
+    - debug:
+        msg: "my tag is never"
+      tags:
+        - never
+    - debug:
+        msg: "my tag is always"
+      tags:
+        - always
+
+  handlers:
+    - name: is this thing on
+      debug:
+        msg: "always handle things!"
+      tags:
+        - always
+    - name: red to blue
+      debug:
+        msg: "red to blue?!"
+      tags:
+        - blue
+    - name: never handle things
+      debug:
+        msg: "never? maybe sometimes..."
+      tags:
+        - never

@@ -1,0 +1,30 @@
+---
+- name: templates ex4 arista
+  hosts: arista
+  gather_facts: False
+  tasks:
+    - eos_command:
+        commands: show ip route
+      register: routes
+    - eos_command:
+        commands: show ip arp
+      register: arps
+    - template:
+        src: templates/gather_output.j2
+        dest: outputs/{{ ansible_host }}_routes
+      delegate_to: localhost
+
+- name: templates ex4 juniper
+  hosts: juniper
+  gather_facts: False
+  tasks:
+    - junos_command:
+        commands: show route terse
+      register: routes
+    - junos_command:
+        commands: show arp
+      register: arps
+    - template:
+        src: templates/gather_output.j2
+        dest: outputs/{{ ansible_host }}_routes
+      delegate_to: localhost

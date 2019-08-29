@@ -1,0 +1,24 @@
+---
+- name: templates ex2
+  hosts: nxos
+  gather_facts: False
+  vars:
+    napalam_creds:
+      hostname: "{{ ansible_host }}"
+      username: "{{ ansible_user }}"
+      password: "{{ ansible_password }}"
+      dev_os: "{{ ansible_network_os }}"
+      optional_args:
+        port: 8443
+  tasks:
+    - template:
+        src: templates/nxos_bgp_ipv6.j2
+        dest: configurations/{{ inventory_hostname }}_bgp
+      tags: render_configs
+    - napalm_install_config:
+        provider: "{{ napalam_creds }}"
+        config_file: configurations/{{ inventory_hostname }}_bgp
+        diff_file: diffs/{{ inventory_hostname }}
+        commit_changes: False
+        replace_config: False
+      tags: deploy_configs
