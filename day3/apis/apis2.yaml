@@ -1,0 +1,11 @@
+---
+- name: apis ex2
+  hosts: nxos
+  gather_facts: False
+  tasks:
+    - nxos_facts:
+    - nxos_config:
+        lines:
+          - "description to {{ item.value[0]['sysname'].split('.')[0] }} port {{ item.value[0]['port'] }}"
+        parents: "interface {{ item.key }}"
+      loop: "{{ ansible_net_neighbors | dict2items }}"

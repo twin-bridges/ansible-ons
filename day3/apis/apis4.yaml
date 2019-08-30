@@ -1,0 +1,27 @@
+---
+- name: apis ex4
+  hosts: nxos1
+  gather_facts: False
+  tasks:
+    - uri:
+        url: "https://{{ ansible_host }}:{{ ansible_httpapi_port }}/api/aaaLogin.json"
+        validate_certs: False
+        method: POST
+        body_format: json
+        body:
+          aaaUser:
+            attributes:
+              name: "{{ ansible_user }}"
+              pwd: "{{ ansible_password }}"
+      register: token
+    - set_fact:
+        nxos_headers:
+          Cookie: "APIC-Cookie={{ token['cookies']['APIC-cookie'] }}"
+    - uri:
+        url: "https://{{ ansible_host }}:{{ ansible_httpapi_port }}/api/node/class/l1PhysIf.json"
+        validate_certs: False
+        method: GET
+        headers: "{{ nxos_headers }}"
+      register: interfaces
+    - debug:
+        var: interfaces

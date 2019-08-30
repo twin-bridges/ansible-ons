@@ -134,14 +134,14 @@ template dags? something pan...?
 ### Ansible Vault
 
 1. Lecture
-2. Setup Vault
-3. vault get pass
-4. vault password file
-5. rekey vault
+2. [Exercise 1](/day3/vault/vault_ex1.md)
+3. [Exercise 2](/day3/vault/vault_ex2.md)
 
 ### Ansible and direct API Calls
 
 1. Lecture
+2. [Exercise 1](/day3/apis/apis_ex1.md)
+3. [Exercise 1](/day3/apis/apis_ex2.md)
 2. URI module GET
 3. URI module POST
 4. URI module DELETE/PATCH/PUT?

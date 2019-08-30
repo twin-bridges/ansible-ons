@@ -1,0 +1,12 @@
+---
+- name: apis ex1
+  hosts: arista
+  gather_facts: False
+  tasks:
+    - eos_command:
+        commands: show version
+      register: version
+    - debug:
+        var: version
+    - debug:
+        var: ansible_connection
