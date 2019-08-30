@@ -141,9 +141,9 @@ template dags? something pan...?
 
 1. Lecture
 2. [Exercise 1](/day3/apis/apis_ex1.md)
-3. [Exercise 1](/day3/apis/apis_ex2.md)
-2. URI module GET
-3. URI module POST
+3. [Exercise 2](/day3/apis/apis_ex2.md)
+2. [Exercise 3](/day3/apis/apis_ex3.md)
+3. [Exercise 4](/day3/apis/apis_ex4.md)
 4. URI module DELETE/PATCH/PUT?
 
 ### Lookups

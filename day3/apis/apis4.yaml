@@ -1,6 +1,6 @@
 ---
 - name: apis ex4
-  hosts: nxos1
+  hosts: nxos
   gather_facts: False
   tasks:
     - uri:
@@ -24,4 +24,6 @@
         headers: "{{ nxos_headers }}"
       register: interfaces
     - debug:
-        var: interfaces
+        msg: "{{ item['l1PhysIf']['attributes']['id'] }}"
+      loop: "{{ interfaces['json']['imdata'] }}"
+      when: item['l1PhysIf']['attributes']['adminSt'] == "up"
