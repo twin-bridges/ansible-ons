@@ -1,0 +1,29 @@
+---
+- name: apis ex5
+  hosts: pan_firewalls
+  gather_facts: False
+  tasks:
+    - get_url:
+        url: "https://{{ ansible_host }}/api/?type=keygen&user={{ ansible_user }}&password={{ ansible_password }}"
+        dest: ./key.xml
+        validate_certs: False
+    - xml:
+        path: ./key.xml
+        xpath: /response/result/key
+        content: text
+      register: api_key
+    - set_fact:
+       api_key: "{{ api_key['matches'][0]['key'] }}"
+    - debug:
+        var: api_key
+    - uri:
+        url: "https://{{ ansible_host }}/api/?type=keygen&user={{ ansible_user }}&password={{ ansible_password }}"
+        validate_certs: False
+        method: GET
+        return_content: True
+      register: api_key
+    - set_fact:
+       api_key: "{{ api_key.content.split('<key>')[1].split('</key>')[0] }}"
+    - debug:
+        var: api_key
+

@@ -124,9 +124,9 @@ template configs (or literally whatever)
 4. [Exercise 3](/day2/jinja2/templates_ex3.md)
 5. [Exercise 4](/day2/jinja2/templates_ex4.md)
 
-Optional
+Optional:
 
-template dags? something pan...?
+template dags? something pan related...?
 
 
 ## Day 3
@@ -142,18 +142,27 @@ template dags? something pan...?
 1. Lecture
 2. [Exercise 1](/day3/apis/apis_ex1.md)
 3. [Exercise 2](/day3/apis/apis_ex2.md)
-2. [Exercise 3](/day3/apis/apis_ex3.md)
-3. [Exercise 4](/day3/apis/apis_ex4.md)
-4. URI module DELETE/PATCH/PUT?
+4. [Exercise 3](/day3/apis/apis_ex3.md)
+5. [Exercise 4](/day3/apis/apis_ex4.md)
+
+Optional:
+
+6. [Exercise 5](/day3/apis/apis_ex2.md)
+7. [Exercise 6](/day3/apis/apis_ex3.md)
+8. [Exercise 7](/day3/apis/apis_ex4.md)
 
 ### Lookups
 
 1. Lecture
+2. [Exercise 1](/day3/lookups/lookups_ex1.md)
 
 
 ### Filters
 
 1. Lecture
+regex filter?
+simple stuff like cast to str
+default is a good one
 
 ### Roles
 

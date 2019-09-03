@@ -1,0 +1,25 @@
+---
+- name: apis ex5
+  hosts: pan_firewalls
+  gather_facts: False
+  tasks:
+    - get_url:
+        url: "https://{{ ansible_host }}/api/?type=keygen&user={{ ansible_user }}&password={{ ansible_password }}"
+        dest: ./key.xml
+        validate_certs: False
+    - xml:
+        path: ./key.xml
+        xpath: /response/result/key
+        content: text
+      register: api_key
+    - set_fact:
+       api_key: "{{ api_key['matches'][0]['key'] }}"
+    - uri:
+        url: "https://{{ ansible_host }}/api/?key={{ api_key }}&type=config&action=set&xpath=/config/devices/entry[@name='localhost.localdomain']/vsys/entry[@name='vsys1']/address/entry[@name='not_sure1']&element=<ip-netmask>2.1.2.1/32</ip-netmask>"
+        validate_certs: False
+        method: POST
+        return_content: True
+      register: response
+    - debug:
+        var: response
+

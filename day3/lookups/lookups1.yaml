@@ -1,0 +1,15 @@
+---
+- name: lookups ex1
+  hosts: localhost
+  gather_facts: False
+  vars:
+    filecontents: "{{ lookup('file', 'averyinterestingfile.txt') }}"
+    files: "{{ lookup('fileglob', '*.yaml') }}"
+    my_shell: "{{ lookup('env', 'SHELL') }}"
+  tasks:
+    - debug:
+        var: filecontents
+    - debug:
+        var: files
+    - debug:
+        var: my_shell
