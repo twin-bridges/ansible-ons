@@ -1,0 +1,14 @@
+---
+- name: filters ex2
+  hosts: nxos
+  gather_facts: False
+  tasks:
+    - nxos_command:
+        commands: show run
+      register: config
+    - debug:
+        var: config
+    - set_fact:
+        interface_static_macs: "{{ config.stdout[0] | regex_findall('^\\s+mac-address\\s+.*$', multiline=True) }}"
+    - debug:
+        var: interface_static_macs

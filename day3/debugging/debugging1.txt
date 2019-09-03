@@ -1,0 +1,28 @@
+--- Remove SSH key ---
+$ ssh-keygen -R cisco1.lasthop.io
+# Host cisco1.lasthop.io found: line 7
+/Users/carl/.ssh/known_hosts updated.
+Original contents retained as /Users/carl/.ssh/known_hosts.old
+
+--- Verify SSH key missing (don't save it) ---
+$ ssh -l pyclass cisco1.lasthop.io
+The authenticity of host 'cisco1.twb-tech.com (184.105.247.70)' can't be established.
+RSA key fingerprint is 9c:08:9e:db:c0:28:1a:51:cc:23:f6:0d:6c:c5:a4:0e.
+Are you sure you want to continue connecting (yes/no)? ^C
+
+--- Verify .ansible.cfg set to host_key_checking = True (the default) ---
+$ cat ~/.ansible.cfg | grep host_key
+# host_key_checking = True
+
+--- Turn on Ansible debugging/logging ---
+$ export ANSIBLE_DEBUG=True
+$ export ANSIBLE_LOG_PATH=~/ansible.log
+$ ansible-playbook debugging1.yaml -vvvv
+
+--- Investigate the log file ---
+$ cat ~/ansible.log
+$ cat ~/ansible.log | grep cisco1
+
+--- Unset those Ansible environment variables ---
+$ unset ANSIBLE_DEBUG
+$ unset ANSIBLE_LOG_PATH

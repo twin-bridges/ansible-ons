@@ -1,0 +1,5 @@
+---
+- eos_config:
+    lines: "{{ global_config }}"
+  become: True
+  become_method: enable

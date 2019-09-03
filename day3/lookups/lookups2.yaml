@@ -1,0 +1,17 @@
+---
+- name: lookups ex2
+  hosts: cisco
+  gather_facts: False
+  tasks:
+    - ios_command:
+        commands: show version
+      register: output
+    - set_fact:
+        show_version: "{{ output.stdout[0] }}"
+    - copy:
+        content: "{{ show_version }}"
+        dest: "{{ 'show_version_output' + ansible_host }}"
+    - set_fact:
+        new_show_version: "{{ lookup('file', 'show_version_output' + ansible_host) }}"
+    - debug:
+        var: new_show_version

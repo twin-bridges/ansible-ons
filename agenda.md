@@ -1,3 +1,5 @@
+need to add in more config changes w/ napalm somewhere probably cuz its awesome
+
 # Ansible On Site Training
 
 ## Day 1
@@ -39,9 +41,6 @@ need to get into talking about lists/dicts here a bit more
 
 
 ### Ansible Modules
-
-steal from class2 ++ what is a module, show where to find module index, etc. maybe a quick discussion/highlight of copy, command/shell since those are v handy to know
-here we will start actually interacting w/ lists dicts a little more (w/out loops so far)
 
 1. Lecture
 2. [Exercise 1](/day1/modules/modules_ex1.md)
@@ -89,6 +88,7 @@ use command modules instead of just facts
 Optional:
 
 3. [Exercise 3](/day2/gathering_info/gathering_info_ex3.md)
+add another pan task
 
 ### Basic Configuration Changes
 steal from https://github.com/ktbyers/ansible_course/tree/master/class3/exercises
@@ -100,6 +100,7 @@ steal from https://github.com/ktbyers/ansible_course/tree/master/class3/exercise
 Optional:
 
 4. [Exercise 3](/day2/basic_configuration/basic_configuration_ex3.md)
+add another pan task
 
 ### Handlers
 include at least something *not* network related (restart a service or even just run some other task to show that i could be whatever)
@@ -107,6 +108,8 @@ include at least something *not* network related (restart a service or even just
 1. Lecture
 2. [Exercise 1](/day2/handlers/basic_configuration_ex1.md)
 2. [Exercise 2](/day2/handlers/basic_configuration_ex2.md)
+
+add another pan task (commit? do the modules not commit by default?)
 
 ### Tags
 
@@ -127,6 +130,7 @@ template configs (or literally whatever)
 Optional:
 
 template dags? something pan related...?
+add another pan task
 
 
 ## Day 3
@@ -155,26 +159,27 @@ Optional:
 
 1. Lecture
 2. [Exercise 1](/day3/lookups/lookups_ex1.md)
+3. [Exercise 2](/day3/lookups/lookups_ex2.md)
 
 
 ### Filters
 
 1. Lecture
-regex filter?
-simple stuff like cast to str
-default is a good one
+2. [Exercise 1](/day3/filters/lookups_ex1.md)
+3. [Exercise 2](/day3/filters/lookups_ex2.md)
+4. [Exercise 3](/day3/filters/lookups_ex3.md)
+
 
 ### Roles
 
 1. Lecture
+2. [Exercise 1](/day3/roles/roles_ex1.md)
 
-### Validating Changes
-
-1. Lecture
-
-### Debugging
+### Debugging and Validating Changes
 
 1. Lecture
+2. [Exercise 1](/day3/debugging/debugging_ex1.md)
+3. [Exercise 2](/day3/debugging/debugging_ex2.md)
 
 ## Day 4
 

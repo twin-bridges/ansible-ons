@@ -1,0 +1,6 @@
+---
+- name: debugging ex1
+  hosts: cisco1
+  gather_facts: False
+  tasks:
+    - ios_facts:

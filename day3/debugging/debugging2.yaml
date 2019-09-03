@@ -1,0 +1,49 @@
+---
+- name: debugging ex2
+  hosts: arista7
+  gather_facts: False
+  vars:
+    vlans:
+        - vlan_id: "1"
+          vlan_name: default
+        - vlan_id: "2"
+          vlan_name: VLAN0002
+        - vlan_id: "3"
+          vlan_name: VLAN0003
+        - vlan_id: "4"
+          vlan_name: VLAN0004
+        - vlan_id: "5"
+          vlan_name: VLAN0005
+        - vlan_id: "6"
+          vlan_name: VLAN0006
+        - vlan_id: "7"
+          vlan_name: VLAN0007
+        - vlan_id: "333"
+          vlan_name: blue333
+        - vlan_id: "335"
+          vlan_name: blue335
+        - vlan_id: "336"
+          vlan_name: blue336
+        - vlan_id: "337"
+          vlan_name: blue337
+        - vlan_id: "338"
+          vlan_name: blue338
+  tasks:
+    - eos_config:
+        lines: "name {{ item.vlan_name }}"
+        parents: "vlan {{ item.vlan_id }}"
+      become: True
+      become_method: enable
+      loop: "{{ vlans }}"
+    - eos_command:
+        commands: show vlan
+      register: current_vlans
+    - set_fact:
+        current_vlans: "{{ current_vlans.stdout[0] | regex_findall('^\\d+', multiline=True) }}"
+    - set_fact:
+        vlans_intended: "{{ vlans | map(attribute='vlan_id') | list }}"
+    - set_fact:
+        vlan_error: "{{ vlans_intended | symmetric_difference(current_vlans) | list }}"
+    - assert:
+        that:
+          - "vlan_error == []"

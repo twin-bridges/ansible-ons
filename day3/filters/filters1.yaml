@@ -1,0 +1,28 @@
+---
+- name: filters ex1
+  hosts: localhost
+  gather_facts: False
+  tasks:
+    - set_fact:
+        my_ip_address: "{{ ip_address | default('1.2.3.4') }}"
+    - debug:
+        var: my_ip_address
+    - set_fact:
+        ip_address: 4.5.6.7
+    - set_fact:
+        my_ip_address: "{{ ip_address | default('1.2.3.4') }}"
+    - debug:
+        var: my_ip_address
+    - debug:
+        msg: "{{ 'my message is all lower case' | upper }}"
+    - set_fact:
+        myjson: "{{ lookup('file', 'somejson.json') }}"
+    - copy:
+        content: "{{ myjson }}"
+        dest: uglyjson.json
+    - copy:
+        content: "{{ myjson | to_nice_json }}"
+        dest: prettyjson.json
+    - copy:
+        content: "{{ myjson | to_nice_yaml }}"
+        dest: prettyyaml.yaml

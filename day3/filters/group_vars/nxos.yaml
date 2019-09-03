@@ -1,0 +1,6 @@
+---
+ansible_network_os: nxos
+ansible_connection: httpapi
+ansible_httpapi_use_ssl: True
+ansible_httpapi_validate_certs: False
+ansible_httpapi_port: 8443

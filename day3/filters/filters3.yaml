@@ -1,0 +1,19 @@
+---
+- name: Convert NAPALM MAC table to a simpler data structure
+  hosts: nxos1
+  vars:
+    napalam_creds:
+      hostname: "{{ ansible_host }}"
+      username: "{{ ansible_user }}"
+      password: "{{ ansible_password }}"
+      dev_os: "{{ ansible_network_os }}"
+      optional_args:
+        port: 8443
+  tasks:
+    - napalm_get_facts:
+        provider: "{{ napalam_creds }}"
+        filter: mac_address_table
+    - set_fact:
+        mac_lookup: "{{ lookup('template', 'convert_mac_table.j2') | from_yaml }}"
+    - debug:
+        var: mac_lookup
