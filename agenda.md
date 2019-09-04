@@ -106,8 +106,8 @@ add another pan task
 include at least something *not* network related (restart a service or even just run some other task to show that i could be whatever)
 
 1. Lecture
-2. [Exercise 1](/day2/handlers/basic_configuration_ex1.md)
-2. [Exercise 2](/day2/handlers/basic_configuration_ex2.md)
+2. [Exercise 1](/day2/handlers/handlers_ex1.md)
+2. [Exercise 2](/day2/handlers/handlers_ex2.md)
 
 add another pan task (commit? do the modules not commit by default?)
 
