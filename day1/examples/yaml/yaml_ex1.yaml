@@ -1,0 +1,22 @@
+---
+thisisakey: thisisavalue # everything in yaml starts with a list or a dict (k/v pair)
+thisisalist: # usually even if you have a list, you would store that as a value of a dict
+  - 0
+  - 1
+  - 2
+bool1: True # bools are silly in yaml, but they'll get "normalized" to python bools when loaded
+bool2: true
+bool3: yes
+bool4: on
+parentdict:
+  nesteddict: # we can nest dictionaries in dictionaries
+    somenestedvalue: somenestedkey # we can store k/v pairs in our nested dict
+    whynotalist: # we can store another key that contains a list too
+      - list item 1
+      - list item 2
+      - False
+      - False
+      - no
+      - off
+      - heckanotherdict: # that list can even contain other dicts
+          - nestedlists!

@@ -1,0 +1,9 @@
+---
+interfaces:
+  ethernet:
+    ethernet1:
+      state: disabled
+      ip: False
+    ethernet2:
+      state: enabled
+      ip: 1.2.3.4

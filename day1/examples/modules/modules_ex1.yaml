@@ -1,0 +1,14 @@
+---
+- name: gather nxos facts
+  hosts: nxos1
+  gather_facts: False
+  tasks:
+    - nxos_facts:
+      register: device_facts
+    - debug:
+        var: device_facts["ansible_facts"]["fan_info"]
+    - nxos_facts:
+        gather_subset: interfaces
+      register: device_facts
+    - debug:
+        var: device_facts["ansible_facts"]["fan_info"]

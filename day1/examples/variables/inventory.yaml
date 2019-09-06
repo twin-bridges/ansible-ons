@@ -1,0 +1,21 @@
+---
+all:
+  vars:
+    ansible_connection: local
+    some_var: some_var_in_all_group
+  children:
+    local:
+      hosts:
+        localhost1:
+          ansible_host: localhost
+      vars:
+        some_var: some_var_in_local_group
+    other:
+      hosts:
+        localhost2:
+          ansible_host: localhost
+          some_var: some_var_in_localhost2
+          list_var:
+            - item1
+            - item2
+            - item3

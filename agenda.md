@@ -116,6 +116,8 @@ add another pan task (commit? do the modules not commit by default?)
 1. Lecture
 2. [Exercise 1](/day2/tags/tags_ex1.md)
 
+add another exercise to tag on plays and tasks (maybe w/ same tag) to see what happens
+
 ### Jinja2
 steal from
 
@@ -188,3 +190,11 @@ Optional:
 ### Network Engine
 
 ### TBD
+
+Thoughts:
+- Regex
+- Virtaulenv
+- complex data structures -- like how we discuss in pyplus ons
+- Custom module
+- Example dynamic inventory
+- Ansible + TextFSM or Genie
