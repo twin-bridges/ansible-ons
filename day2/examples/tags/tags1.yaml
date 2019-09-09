@@ -1,0 +1,17 @@
+---
+- name: tags ex1
+  hosts: localhost
+  gather_facts: False
+  tasks:
+    - debug:
+        msg: "seattle"
+      tags: sea, pnw
+    - debug:
+        msg: "san francisco"
+      tags: sfo, ca
+    - debug:
+        msg: "portland"
+      tags: never, pdx
+    - debug:
+        msg: "the mooooooooon!"
+      tags: always, moon

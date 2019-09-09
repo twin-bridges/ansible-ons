@@ -1,0 +1,15 @@
+---
+- name: basic config ex1
+  hosts: arista5
+  gather_facts: False
+  tasks:
+    - eos_config:
+        lines:
+          - username ansibleuser privilege 15 secret 0 ansibleisneat
+    - eos_user:
+        name: ansibleuser
+        configured_password: ansibleisneat
+        privilege: 15
+    - cli_config:
+        config: username ansibleuser privilege 15 secret 0 ansibleisneat
+

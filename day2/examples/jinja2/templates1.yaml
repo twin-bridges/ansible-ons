@@ -1,0 +1,8 @@
+---
+- name: templates ex1
+  hosts: arista5
+  gather_facts: False
+  tasks:
+    - template:
+        src: templates/eos.j2
+        dest: outputs/{{ inventory_hostname }}
