@@ -1,0 +1,21 @@
+---
+- name: conditionals ex1
+  hosts: nxos2
+  gather_facts: False
+  tasks:
+    - nxos_facts:
+      register: device_facts
+    - debug:
+        var: device_facts.ansible_facts.ansible_net_all_ipv6_addresses
+      when: device_facts.ansible_facts.ansible_net_all_ipv6_addresses == []
+    - debug:
+        var: device_facts.ansible_facts.vlan_list
+      when:
+        - device_facts.changed == false
+        - device_facts.failed == false
+    - debug:
+        var: device_facts.ansible_facts.vlan_list
+      when: (device_facts.changed == true) or (device_facts.failed == false)
+    - debug:
+        var: device_facts.ansible_facts.vlan_list
+      when: (device_facts.changed == true) or (device_facts.failed == true)

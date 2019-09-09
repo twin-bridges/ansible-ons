@@ -1,0 +1,14 @@
+---
+- name: loops ex1
+  hosts: nxos1
+  gather_facts: False
+  tasks:
+    - debug:
+        var: item
+      loop: "{{ list_of_ips }}"
+    - debug:
+        var: item
+      loop: "{{ dictionary_of_ips | dict2items }}"
+    - debug:
+        msg: "{{ item.value }}"
+      loop: "{{ dictionary_of_ips | dict2items }}"

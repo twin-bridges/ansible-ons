@@ -1,0 +1,26 @@
+---
+- name: variables ex2
+  hosts: localhost2
+  gather_facts: False
+  vars:
+    interfaces:
+      ethernet:
+        ethernet999:
+          state: probablynotreal!
+          ip: sure, why not?
+        ethernet1000:
+          state: definetlynotreal!
+          ip: nah, we don't need an ip...
+    splittable_string: what can i split. this on?
+    splittable_string_2: "this is \n a line \n i guess \n we have so many \n line breaks"
+  tasks:
+    - debug:
+        var: interfaces
+    - debug:
+        var: splittable_string
+    - debug:
+        msg: "{{ splittable_string.split() }}"
+    - debug:
+        msg: "{{ splittable_string_2.splitlines() }}"
+    - debug:
+        msg: "{{ splittable_string.split('.') }}"
