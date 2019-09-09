@@ -28,7 +28,7 @@ ok: [nxos1] => (item=8.8.8.8) => {
 }
 ```
 
-Using very similar syntax it is also possible to iterate through a dictionary. When iterating through a dictionary, however, it must be cast to a list of key/value pairs -- this can be acheived with the `dict2items` filter (more on filters later!):
+Using very similar syntax it is also possible to iterate through a dictionary. When iterating through a dictionary, however, it must be cast to a list of key/value pairs -- this can be achieved with the `dict2items` filter (more on filters later!):
 
 ```
 TASK [debug] **************************************************************************************************************************

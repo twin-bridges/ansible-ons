@@ -5,7 +5,7 @@ Depending on what you need to configure, and the type of device you are trying t
 1. ios/eos/junos/etc. config modules
 2. Configuration specific module such as: eos_user, nxos_l3_interface, etc.
 3. cli_config -- essentially an agnostic wrapper for "network-cli" compatible devices
-4. url -- for API enabled deivces (more on this later!)
+4. url -- for API enabled devices (more on this later!)
 
 Note that configurations will *not necessarily* be idempotent. It is incumbent on the Playbook creator (not the module creator) to ensure that tasks are idempotent!
 

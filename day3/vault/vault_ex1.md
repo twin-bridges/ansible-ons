@@ -1,6 +1,6 @@
 # Vault Exercise 1
 
-1. Rather than storing the credentials in the inventory file, create a directory "all" in the group_vars folder (also remove them from the inventory file!). Within this foldler create a "creds.yaml" file that contains the device credentials.
+1. Rather than storing the credentials in the inventory file, create a directory "all" in the group_vars folder (also remove them from the inventory file!). Within this folder create a "creds.yaml" file that contains the device credentials.
 
 2. Use Vault to encrypt this file: "ansible-vault encrypt MYFILE"; use a simple password so you don't forget!
 

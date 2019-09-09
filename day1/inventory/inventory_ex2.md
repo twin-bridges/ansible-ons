@@ -26,7 +26,7 @@ Hosts:
 
 Ensure that the name of the host is just the hostname (i.e. arista5 for arista5.lasthop.io). Add a variable in the "all" group to set the "ansible_connection" to "local" for all hosts in the inventory.
 
-Use the Ansible command line to execute the ping module against the "all" group; ensure that you are "pointing" to the inventory file you just created with the "-i" flag (substitue "inventory_ex2.yaml" with the name of your inventory file below):
+Use the Ansible command line to execute the ping module against the "all" group; ensure that you are "pointing" to the inventory file you just created with the "-i" flag (substitute "inventory_ex2.yaml" with the name of your inventory file below):
 
 ```
 ansible all -m ping -i ./inventory_ex2.yaml

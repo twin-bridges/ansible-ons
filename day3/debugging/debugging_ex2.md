@@ -4,4 +4,4 @@
 
 2. Validate that the ONLY VLANs on that switch are the five VLANs that you just configured and the eight default VLANs (VLANs 1 - 7).
 
-3. Have the playbook fail with a clear error message if any additional VLANs are configured on that switch.
+3. Have the Playbook fail with a clear error message if any additional VLANs are configured on that switch.

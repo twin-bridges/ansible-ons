@@ -1,8 +1,8 @@
 # Inventory Exercise 1
 
-1. Create a simple INI-sytle Ansible inventory file with a single entry for the localhost. Ensure that this localhost is configured under a group called "local", and that the "ansible_connection" is set to local (this is so we don't need to worry about any authentication yet).
+1. Create a simple INI-style Ansible inventory file with a single entry for the localhost. Ensure that this localhost is configured under a group called "local", and that the "ansible_connection" is set to local (this is so we don't need to worry about any authentication yet).
 
-Use the Ansible command line to execute the ping module against the group you created ("local"); ensure that you are "pointing" to the inventory file you just created with the "-i" flag (substitue "inventory_ex1" with the name of your inventory file below):
+Use the Ansible command line to execute the ping module against the group you created ("local"); ensure that you are "pointing" to the inventory file you just created with the "-i" flag (substitute "inventory_ex1" with the name of your inventory file below):
 
 ```
 ansible local -m ping -i ./inventory_ex1

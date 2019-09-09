@@ -4,4 +4,4 @@
 
 2. Parse the stdout_xml to determine the "family" type of the device. If the family type is "vm" print the "vm-mode" to stdout.
 
-Note this task can be a bit difficult if you don't have some exposure to XML/xpath - this task can be acheived by looping through stdout_lines as well, so feel free to use either method!
+Note this task can be a bit difficult if you don't have some exposure to XML/xpath - this task can be achieved by looping through stdout_lines as well, so feel free to use either method!

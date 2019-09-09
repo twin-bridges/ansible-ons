@@ -15,7 +15,7 @@ The debug cli output should be similar to:
 " cookie="4480226471677181"><ip-netmask>1.1.1.1/32</ip-netmask></request>
 ```
 
-This provides you most of the information required to create your Playbook. In addition to the API key you will need to pass the following argumetns:
+This provides you most of the information required to create your Playbook. In addition to the API key you will need to pass the following arguments:
 
   - type
   - action

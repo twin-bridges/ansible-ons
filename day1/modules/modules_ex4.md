@@ -23,7 +23,7 @@ Prior to creating your tasks, include this in your Playbook:
     - role: PaloAltoNetworks.paloaltonetworks
 ```
 
-Finally, add a task that executes the "panos_check" module, this module has a "provider" argument which you should pass your previously created dicitonary to.
+Finally, add a task that executes the "panos_check" module, this module has a "provider" argument which you should pass your previously created dictionary to.
 
 3. Register the output of the "panos_check" task, and print this to stdout.
 

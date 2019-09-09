@@ -2,7 +2,7 @@
 
 1. Create a new Playbook to iterate over the list of IP addresses in your variables. This time, use the "loop" syntax instead of "with_items".
 
-2. Add a second task to acheive the same result as done previously with the "with_dict" syntax, but this time using a loop. We haven't covered filters yet, but a filter will be necessary to acheive the same output. A filter essentially transforms data. In this case, we need a filter to convert the dictionary to a list of key/value pairs. Your loop clause should look similar to:
+2. Add a second task to achieve the same result as done previously with the "with_dict" syntax, but this time using a loop. We haven't covered filters yet, but a filter will be necessary to achieve the same output. A filter essentially transforms data. In this case, we need a filter to convert the dictionary to a list of key/value pairs. Your loop clause should look similar to:
 
 ```
 loop: "{{ my_acl | dict2items }}"

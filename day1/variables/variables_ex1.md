@@ -8,4 +8,4 @@
     - NXOS = nxos
     - Juniper = junos
 
-Addd another Play that contains a task to "print" (debug) the value of the ansible_network_os for each host in your inventory.
+Add another Play that contains a task to "print" (debug) the value of the ansible_network_os for each host in your inventory.

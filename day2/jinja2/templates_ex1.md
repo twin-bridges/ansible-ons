@@ -18,6 +18,6 @@ You will need to configure the following variables in your inventory to avoid an
     ntp1
     ntp2
 
-2. Add tasks to the play to use the standard ansible "X_config" modules to deploy the configurations to the devices.
+2. Add tasks to the play to use the standard Ansible "X_config" modules to deploy the configurations to the devices.
 
 3. Add tags to your Playbook such that the Playbook could be executed against one of the groups at a time (cisco, nxos, eos).
