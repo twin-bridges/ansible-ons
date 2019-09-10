@@ -1,0 +1,13 @@
+---
+- name: apis ex1
+  hosts: arista5
+  gather_facts: False
+  tasks:
+    - eos_command:
+        commands: show arp
+      register: arps
+    - debug:
+        var: arps
+    - debug:
+        var: ansible_connection
+

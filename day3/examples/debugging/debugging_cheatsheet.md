@@ -2,7 +2,7 @@
 
 ## Its basically always YAML!
 
-If you're fighting YAML syntax/formatting issues, its worht giving this article a [read](https://www.redhat.com/sysadmin/yaml-tips).
+If you're fighting YAML syntax/formatting issues, its worth giving this article a [read](https://www.redhat.com/sysadmin/yaml-tips).
 
 Our favorite tips from the linked article:
 

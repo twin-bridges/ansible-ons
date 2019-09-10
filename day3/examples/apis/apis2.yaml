@@ -1,0 +1,19 @@
+---
+- name: apis ex2
+  hosts: localhost
+  gather_facts: False
+  tasks:
+    - uri:
+        url: "https://swapi.co/api/starships/9/"
+        validate_certs: False
+        method: GET
+      register: starwars
+    - debug:
+        var: starwars
+    - uri:
+        url: "https://swapi.co/api/starships/9/?format=wookiee"
+        validate_certs: False
+        method: GET
+      register: starwarswookiee
+    - debug:
+        var: starwarswookiee
