@@ -81,7 +81,6 @@ Optional:
 Optional:
 
 3. [Exercise 3](/day2/gathering_info/gathering_info_ex3.md)
-add another pan task
 
 
 ### Basic Configuration Changes
@@ -93,7 +92,6 @@ add another pan task
 Optional:
 
 4. [Exercise 3](/day2/basic_configuration/basic_configuration_ex3.md)
-add another pan task
 
 
 ### Handlers

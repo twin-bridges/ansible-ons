@@ -4,6 +4,3 @@
 - Add installing pan-python, pandevice to course build out
 - Add a panorama instance adn register the firewall vm to it
 - Add tf stuff to deploy the pan and set to "standard" creds
-- yaml lint all the yaml inventory stuff -- fix spacing -- there is some 2 / some 4 space indentation
-- update python interpreter path in inventory files to match course hosts (set for my mac right now)
-- spellchecker everything
