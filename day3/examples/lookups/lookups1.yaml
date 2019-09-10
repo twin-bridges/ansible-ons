@@ -1,0 +1,7 @@
+---
+- name: looups ex1
+  hosts: localhost
+  gather_facts: False
+  tasks:
+    - debug:
+        msg: "ip of sea-rtr1: {{ lookup('csvfile', 'sea-rtr1 file=important_data.csv delimiter=, col=1') }}"

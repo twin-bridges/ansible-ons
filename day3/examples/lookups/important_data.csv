@@ -1,0 +1,5 @@
+device,ip,location,notes
+sea-rtr1,1.2.3.4,seattle,basically the most important router ever
+sfo-rtr1,5.6.7.8,san francisco,pretty important but not as important as sea-rtr1!
+lhr-rtr1,2.4.6.8,london,a router with a cool accent
+fra-rtr1,8.7.6.5,frankfurt,excellent sausages near this router

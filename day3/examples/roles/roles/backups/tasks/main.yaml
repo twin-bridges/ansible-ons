@@ -1,0 +1,18 @@
+---
+- name: copy 'backup' script
+  copy:
+    src: backup.sh
+    dest: "{{ ansible_user_dir }}"
+    owner: "{{ ansible_user_id }}"
+    mode: 0700
+  tags: backups
+
+- name: add cron entry
+  cron:
+    name: "{{ cron_entry_name }}"
+    minute: 15
+    hour: 6
+    weekday: 1
+    job: "cd {{ ansible_user_dir }} && sh backup.sh > /dev/null 2>&1"
+    user: "{{ ansible_user_id }}"
+  tags: backups

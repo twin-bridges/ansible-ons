@@ -1,0 +1,28 @@
+---
+- name: filters ex1
+  hosts: localhost
+  gather_facts: False
+  vars:
+    my_list:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+    my_nested_list:
+      - "{{ my_list }}"
+      - 1
+      - 2
+  tasks:
+    - debug:
+        msg: "{{ my_list | min }}"
+    - debug:
+        msg: "{{ my_list | max }}"
+    - debug:
+        msg: "{{ my_nested_list | flatten }}"
+    - debug:
+        msg: "{{ my_nested_list | flatten | unique }}"
+    - debug:
+        msg: "{{ my_nested_list | flatten | difference(my_nested_list) }}"
+    - debug:
+        msg: "{{ '01' | random_mac }}"
