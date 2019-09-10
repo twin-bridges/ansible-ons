@@ -4,7 +4,7 @@
 
 ```
 username: pyclass
-password: 88newclass
+password: bogus
 ```
 
 2. Create a new Playbook, and a Play that operates against the "cisco" group. Create two tasks, the first should use the "ios_facts" module to gather facts and "register" this to a variable. The second task should use the "debug" module to print this output to stdout.

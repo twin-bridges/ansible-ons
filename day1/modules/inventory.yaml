@@ -3,7 +3,7 @@ all:
   vars:
     ansible_connection: network_cli
     ansible_user: pyclass
-    ansible_password: 88newclass
+    ansible_password: bogus
     ansible_python_interpreter: /usr/local/bin/python
   children:
     arista:
