@@ -1,0 +1,43 @@
+---
+- name: more config ex3
+  hosts: pan_firewalls
+  gather_facts: False
+  vars:
+    provider:
+      ip_address: "{{ ansible_host }}"
+      username: "{{ ansible_user }}"
+      password: "{{ ansible_password }}"
+  roles:
+    - role: PaloAltoNetworks.paloaltonetworks
+  tasks:
+    - panos_loopback_interface:
+        provider: "{{ provider }}"
+        if_name: loopback.1
+        ip: ["1.1.1.1/32"]
+        zone_name: inside
+    - panos_loopback_interface:
+        provider: "{{ provider }}"
+        if_name: loopback.2
+        ip: ["2.2.2.2/32"]
+        zone_name: outside
+    - panos_loopback_interface:
+        provider: "{{ provider }}"
+        if_name: loopback.3
+        ip: ["3.3.3.3/32"]
+        zone_name: dmz
+    - panos_zone:
+        provider: "{{ provider }}"
+        zone: inside
+        mode: layer3
+        interface: ["loopback.1"]
+    - panos_zone:
+        provider: "{{ provider }}"
+        zone: outside
+        mode: layer3
+        interface: ["loopback.2"]
+    - panos_zone:
+        provider: "{{ provider }}"
+        zone: dmz
+        mode: layer3
+        interface: ["loopback.3"]
+

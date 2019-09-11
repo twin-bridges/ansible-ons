@@ -1,0 +1,22 @@
+---
+- name: more config ex4
+  hosts: pan_firewalls
+  gather_facts: False
+  vars:
+    provider:
+      ip_address: "{{ ansible_host }}"
+      username: "{{ ansible_user }}"
+      password: "{{ ansible_password }}"
+  roles:
+    - role: PaloAltoNetworks.paloaltonetworks
+  tasks:
+    - panos_nat_rule:
+        provider: "{{ provider }}"
+        rule_name: "pat internal zones"
+        source_zone: ["inside", "dmz"]
+        destination_zone: "outside"
+        source_ip: ["10.0.0.0/8", "192.168.0.0/16"]
+        destination_ip: ["any"]
+        snat_type: dynamic-ip-and-port
+        snat_interface: "loopback.2"
+      tags: snat

@@ -116,6 +116,15 @@ Optional:
 5. [Exercise 4](/day2/jinja2/templates_ex4.md)
 
 
+### More Configuration (Optional)
+
+1. [Exercise 1](/day2/more_config/more_config_ex1.md)
+2. [Exercise 2](/day2/more_config/more_config_ex2.md)
+3. [Exercise 3](/day2/more_config/more_config_ex3.md)
+4. [Exercise 4](/day2/more_config/more_config_ex4.md)
+5. [Exercise 5](/day2/more_config/more_config_ex4.md)
+
+
 ## Day 3
 
 ### Ansible Vault

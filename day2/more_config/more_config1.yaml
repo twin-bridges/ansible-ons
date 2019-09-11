@@ -1,0 +1,10 @@
+---
+- name: more config ex1
+  hosts: nxos
+  gather_facts: False
+  tasks:
+    - nxos_snmp_location:
+        location: "2nd Street, San Francisco"
+    - nxos_snmp_contact:
+        contact: "IT Operations x7777"
+

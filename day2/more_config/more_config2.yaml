@@ -1,0 +1,31 @@
+---
+- name: more config ex2
+  hosts: arista8
+  gather_facts: False
+  vars:
+    napalam_creds:
+      hostname: "{{ ansible_host }}"
+      username: "{{ ansible_user }}"
+      password: "{{ ansible_password }}"
+      dev_os: "{{ ansible_network_os }}"
+    config_to_save: running
+  tasks:
+    - napalm_get_facts:
+        provider: "{{ napalam_creds }}"
+        filter: "config"
+      register: configuration
+      tags: backup
+    - copy:
+        # note: the next line is a pretty snazzy way to do this, but we haven't covered filters yet :)
+        # content: "{{ configuration.ansible_facts.napalm_config[config_to_save | default('running')] }}"
+        content: "{{ configuration.ansible_facts.napalm_config[config_to_save] }}"
+        dest: "configs/{{ ansible_host }}.cfg"
+      delegate_to: localhost
+      tags: backup
+    - napalm_install_config:
+        provider: "{{ napalam_creds }}"
+        config_file: "configs/{{ ansible_host }}.cfg"
+        commit_changes: True
+        replace_config: True
+      register: configuration
+      tags: deploy
