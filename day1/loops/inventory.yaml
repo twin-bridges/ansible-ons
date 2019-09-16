@@ -4,7 +4,7 @@ all:
     ansible_connection: network_cli
     ansible_user: pyclass
     ansible_password: bogus
-    ansible_python_interpreter: /usr/local/bin/python
+    ansible_python_interpreter: ~/VENV/py3_venv/bin/python
   children:
     arista:
        hosts:

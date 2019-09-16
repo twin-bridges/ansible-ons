@@ -4,7 +4,7 @@
 
     - ansible_host: [ask your instructor for ip/name]
     - ansible_connection: local
-    - ansible_python_interpreter: /usr/local/bin/python
+    - ansible_python_interpreter: ~/VENV/py3_venv/bin/python
 
 This device should be a member of a group "pan", and "pan_firewalls". Depending on how you configured your credential information you may not need to make any changes as the firewall uses the same standard credentials as the other devices. The "ansible_python_interpreter" setting can be configured for all devices via the "all" vars in the inventory or "all" group_vars.
 
