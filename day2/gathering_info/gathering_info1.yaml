@@ -19,5 +19,5 @@
   tasks:
     - debug:
         msg: "{{ item }}"
-      when: item.startswith("10.220.88.1") or item.startswith("Internet  10.220.88.1 ")
+      when: item.startswith("10.220.88.1 ") or item.startswith("Internet  10.220.88.1 ")
       loop: "{{ arp_table['stdout_lines'][0] }}"
