@@ -1,0 +1,11 @@
+---
+- name: regex1 examples
+  hosts: localhost
+  gather_facts: False
+  tasks:
+    - debug:
+        msg: "{{ 'list of hosts: cisco1.lasthop.io, arista1.lasthop.io' | regex_findall('\\w+\\.\\w+.\\w+') }}"
+    - debug:
+        msg: "{{ 'list of ips: 1.2.3.4, 5.6.7.8' | regex_findall('(?:[0-9]{1,3}\\.){3}[0-9]{1,3}') }}"
+    - debug:
+        msg: "{{ 'somehost:80' | regex_replace(':80', ':443') }}"

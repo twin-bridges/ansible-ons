@@ -1,0 +1,20 @@
+---
+- name: regex exercise 1
+  hosts: arista5
+  gather_facts: False
+  tasks:
+    - cli_command:
+        command: show interface Ethernet1
+      register: eth1
+    - set_fact:
+        eth1_packets_in: "{{ eth1.stdout | regex_search('(\\d+)(?: packets input)', '\\1') }}"
+    - set_fact:
+        eth1_bytes_in: "{{ eth1.stdout | regex_search('(?:input, )(\\d+)(?: bytes)', '\\1') }}"
+    - set_fact:
+        eth1_packets_out: "{{ eth1.stdout | regex_search('(\\d+)(?: packets output)', '\\1') }}"
+    - set_fact:
+        eth1_bytes_out: "{{ eth1.stdout | regex_search('(?:output, )(\\d+)(?: bytes)', '\\1') }}"
+    - debug:
+        msg:
+          - "Ethernet 1 packets: {{ eth1_packets_in[0] }} input; {{ eth1_packets_out[0] }} output"
+          - "Ethernet 1 bytes: {{ eth1_bytes_in[0] }} input; {{ eth1_bytes_out[0] }} output"

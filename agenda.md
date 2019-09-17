@@ -191,10 +191,16 @@ Optional:
 ### TextFSM
 
 
-## Optional
+## Optional Extras!
 
 ### Regular Expressions
 
+1. Lecture
+2. [Exercise 1](/optional_extras/regex/regex_ex1.md)
+
 ### Virtual Environments
+
+1. Lecture
+2. [Exercise 1](/optional_extras/virtual_env/virtual_env_ex1.md)
 
 ### Complex Data Structures
