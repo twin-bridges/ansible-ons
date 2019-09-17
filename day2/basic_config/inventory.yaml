@@ -37,8 +37,6 @@ all:
       hosts:
           pan1:
             ansible_host: pan1.lasthop.io
-            ansible_user: admin
-            ansible_password: 88newclass
       vars:
         ansible_connection: local
 
