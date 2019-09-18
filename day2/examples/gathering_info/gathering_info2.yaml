@@ -1,0 +1,25 @@
+---
+- name: gathering info ex2
+  hosts: pan_firewalls
+  gather_facts: False
+  vars:
+    provider:
+      ip_address: "{{ ansible_host }}"
+      username: "{{ ansible_user }}"
+      password: "{{ ansible_password }}"
+  roles:
+    - role: PaloAltoNetworks.paloaltonetworks
+  tasks:
+    - panos_op:
+        provider: "{{ provider }}"
+        cmd: "show interface management"
+      register: output
+    - debug:
+        msg: "{{ output['stdout_xml'] }}"
+    - xml:
+        xmlstring: "{{ output['stdout_xml'] }}"
+        xpath: /response/result/info/gw
+        content: text
+      register: xml_output
+    - debug:
+        msg: "{{ xml_output['matches'][0] }}"

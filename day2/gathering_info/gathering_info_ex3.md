@@ -1,7 +1,7 @@
 # Gathering Info Exercise 3
 
-1. Write a Playbook that contains Plays to run the "show system info" command on the pan_firewalls group. You can accomplish this with the "panos_op" module.
+1. Write a Playbook that contains a Play to run the "panos_facts" and "panos_object_facts" modules against the pan_firewalls group. The "panos_object_facts" module should be configured to gather any objects that begin with the word "web".
 
-2. Parse the stdout_xml to determine the "family" type of the device. If the family type is "vm" print the "vm-mode" to stdout.
+2. Parse the "panos_facts" and print the software version of the firewall to standard out.
 
-Note this task can be a bit difficult if you don't have some exposure to XML/xpath - this task can be achieved by looping through stdout_lines as well, so feel free to use either method!
+3. Print out all objects that matched the "panos_object_facts" name criteria.

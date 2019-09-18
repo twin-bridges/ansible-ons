@@ -1,0 +1,43 @@
+---
+- name: gathering info ex4
+  hosts: pan_firewalls
+  gather_facts: False
+  vars:
+    provider:
+      ip_address: "{{ ansible_host }}"
+      username: "{{ ansible_user }}"
+      password: "{{ ansible_password }}"
+  roles:
+    - role: PaloAltoNetworks.paloaltonetworks
+  tasks:
+    - panos_op:
+        provider: "{{ provider }}"
+        cmd: "show system info"
+      register: output
+
+    - set_fact:
+        json_output: "{{ output['stdout'] }}"
+    - set_fact:
+        family: "{{ json_output.response.result.system.family }}"
+    - debug:
+        msg: "{{ family }}"
+    - debug:
+         msg: "{{ json_output.response.result.system['vm-mode'] }}"
+      when: family == "vm"
+
+    - xml:
+        xmlstring: "{{ output['stdout_xml'] }}"
+        xpath: /response/result/system/family
+        content: text
+      register: family
+    - xml:
+        xmlstring: "{{ output['stdout_xml'] }}"
+        xpath: /response/result/system/vm-mode
+        content: text
+      register: mode
+      when: family["matches"][0]["family"] == "vm"
+    - debug:
+        msg: "{{ mode['matches'][0]['vm-mode'] }}"
+      when: family["matches"][0]["family"] == "vm"
+
+

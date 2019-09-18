@@ -1,5 +1,5 @@
 ---
-- name: gathering info ex3
+- name: gathering info ex4
   hosts: pan_firewalls
   gather_facts: False
   vars:
@@ -10,21 +10,14 @@
   roles:
     - role: PaloAltoNetworks.paloaltonetworks
   tasks:
-    - panos_op:
+    - panos_facts:
         provider: "{{ provider }}"
-        cmd: "show system info"
-      register: output
-    - xml:
-        xmlstring: "{{ output['stdout_xml'] }}"
-        xpath: /response/result/system/family
-        content: text
-      register: family
-    - xml:
-        xmlstring: "{{ output['stdout_xml'] }}"
-        xpath: /response/result/system/vm-mode
-        content: text
-      register: mode
-      when: family["matches"][0]["family"] == "vm"
+      register: pan_facts
     - debug:
-        msg: "{{ mode['matches'][0]['vm-mode'] }}"
-      when: family["matches"][0]["family"] == "vm"
+        msg: "{{ pan_facts.ansible_facts.ansible_net_version }}"
+    - panos_object_facts:
+        provider: "{{ provider }}"
+        name_regex: "^web"
+      register: pan_obj_facts
+    - debug:
+        var: pan_obj_facts

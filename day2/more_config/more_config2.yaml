@@ -3,7 +3,7 @@
   hosts: arista8
   gather_facts: False
   vars:
-    napalam_creds:
+    napalm_creds:
       hostname: "{{ ansible_host }}"
       username: "{{ ansible_user }}"
       password: "{{ ansible_password }}"
@@ -11,7 +11,7 @@
     config_to_save: running
   tasks:
     - napalm_get_facts:
-        provider: "{{ napalam_creds }}"
+        provider: "{{ napalm_creds }}"
         filter: "config"
       register: configuration
       tags: backup
@@ -23,7 +23,7 @@
       delegate_to: localhost
       tags: backup
     - napalm_install_config:
-        provider: "{{ napalam_creds }}"
+        provider: "{{ napalm_creds }}"
         config_file: "configs/{{ ansible_host }}.cfg"
         commit_changes: True
         replace_config: True
